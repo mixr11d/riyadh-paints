@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Allow: /images/
+
+# استبعاد ملفات المطور المباشرة والـ LLMs من الفهرسة العامة إذا كنت ترغب في ذلك
+Disallow: /llms.txt
+
+# رابط خريطة الموقع لمساعدة محركات البحث في الفهرسة الفورية للخدمات
+Sitemap: https://riyadhpaints.com/sitemap.xml
