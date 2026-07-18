@@ -572,6 +572,11 @@ function hydrateThemeComponents() {
                         <span class="district-tag">الغدير</span>
                         <span class="district-tag">النفل</span>
                         <span class="district-tag">العارض</span>
+                        <span class="district-tag">االحمراء</span>
+                        <span class="district-tag">القدس</span>
+                        <span class="district-tag">الروضة</span>
+                        <span class="district-tag">االأندلس</span>
+                        <span class="district-tag">اشبيليا</span>
                     </div>
                 </div>
                 <div class="footer-col">
