@@ -512,8 +512,8 @@ function hydrateThemeComponents() {
                     <h3>تواصل معنا فوراً</h3>
                     <p style="margin-bottom: 12px;">📍 الرياض، المملكة العربية السعودية</p>
                     <div style="display: flex; flex-direction: column; gap: 10px;">
-                        <a href="tel:${SITE_CONFIG.phone}" class="btn btn-lux-phone" style="padding: 10px 15px; font-size: 0.9rem; border-radius: 6px;">📞 اتصل بنا الآن</a>
-                        <a href="https://wa.me/${SITE_CONFIG.whatsapp}" class="btn btn-lux-whatsapp" style="padding: 10px 15px; font-size: 0.9rem; border-radius: 6px;">💬 اسألنا مباشرة عبر واتساب فوراً</a>
+                        <a href="tel:${SITE_CONFIG.phone}" class="btn btn-lux-phone" style="padding: 12px 15px; font-size: 0.95rem; border-radius: 6px;">📞 اتصل بنا الآن</a>
+                        <a href="https://wa.me/${SITE_CONFIG.whatsapp}" class="btn btn-lux-whatsapp" style="padding: 12px 15px; font-size: 0.95rem; border-radius: 6px;">💬 اسألنا مباشرة عبر واتساب فوراً</a>
                     </div>
                 </div>
             </div>
@@ -524,7 +524,7 @@ function hydrateThemeComponents() {
         </footer>
     `;
 
-    // د- بناء كود أزرار الاتصال العائمة وزر الصعود للأعلى (Aura Glowing)
+    // د- بناء كود أزرار الاتصال العائمة وزر الصعود للأعلى (Aura Glowing) بالخلفيات المصمتة
     const floatingActionsHTML = `
         <div class="floating-actions">
             <!-- زر الاتصال العائد للعميل -->
@@ -689,24 +689,6 @@ function setupInteractionsAndTracking() {
             }, 150); 
         });
     }
-
-    // و- العثور التلقائي على أي روابط أو دعوات نصية مخصصة للاتصال والواتساب بالصفحات وتحويلها لنمط فخم متحرك
-    const allLinks = document.querySelectorAll("a");
-    allLinks.forEach(link => {
-        const href = link.getAttribute("href") || "";
-        const text = link.textContent.trim();
-        
-        // إذا كان رابط واتساب تفاعلي
-        if (href.includes("wa.me") && href.includes(SITE_CONFIG.whatsapp)) {
-            // إضافة التنسيق الفخم المتحرك فوراً
-            link.classList.add("btn", "btn-lux-whatsapp");
-        }
-        
-        // إذا كان رابط اتصال هاتفي تفاعلي
-        if (href.startsWith("tel:") && href.includes(SITE_CONFIG.phone)) {
-            link.classList.add("btn", "btn-lux-phone");
-        }
-    });
 }
 
 // 6. تشغيل التهيئة بمجرد تحميل هيكل المستند (DOM) لضمان السرعة والأداء الفائق
