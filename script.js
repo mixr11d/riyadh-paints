@@ -475,13 +475,13 @@ function hydrateThemeComponents() {
         </header>
     `;
 
-    // ج- بناء كود الفوتر (Footer) مدمجاً بأزرار الاتصال التفاعلية الفخمة والمتحركة تلقائياً
+    // ج- بناء كود الفوتر (Footer) مدمجاً بأزرار الاتصال التفاعلية الفخمة والمتحركة تلقائياً وبأحياء الخدمة الشاملة بالرياض
     const footerHTML = `
         <footer>
             <div class="footer-grid">
                 <div class="footer-col">
                     <h3>نبذة عنا</h3>
-                    <p>نحن في <strong>${SITE_CONFIG.brandName}</strong> نقدم أفضل خدمات التشطيب، الدهانات الداخلية والديكورية، والرشات الخارجية بالرياض وبأعلى جودة تنفيذ وتأسيس ممتاز يضمن استدامة الألوان والمظهر الجذاب.</p>
+                    <p>نحن في <strong>${SITE_CONFIG.brandName}</strong> نقدم أفضل خدمات التشطيب، الدهانات الداخلية والأصباغ والبوية، والرشات الخارجية بالرياض وبأعلى جودة تنفيذ وتأسيس ممتاز يضمن استدامة الألوان والمظهر الجذاب.</p>
                 </div>
                 <div class="footer-col">
                     <h3>روابط الخدمات السريعة</h3>
@@ -493,7 +493,8 @@ function hydrateThemeComponents() {
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h3>أحياء الرياض الأكثر طلباً لخدماتنا</h3>
+                    <h3>نخدم جميع أحياء الرياض</h3>
+                    <p style="font-size: 0.85rem; margin-bottom: 8px; color: #aaa;">نغطي كافة المناطق وخاصة شمال الرياض وأحيائها الأكثر طلباً لخدماتنا:</p>
                     <div class="districts-grid">
                         <span class="district-tag">الملقا</span>
                         <span class="district-tag">الياسمين</span>
