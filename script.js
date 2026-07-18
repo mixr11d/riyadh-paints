@@ -555,7 +555,7 @@ function hydrateThemeComponents() {
                         <li><a href="interior-paints.html">دهانات داخلية معجون</a></li>
                         <li><a href="exterior-paints.html">دهانات خارجية وبروفايل</a></li>
                         <li><a href="suede-finish.html">دهان شامواه وروعة وخيال</a></li>
-                        <li><a href="stucco-paint.html">دهان ستيكو وايبوكسي</a></li>
+                        <li><a href="stucco-paint.html">دهان ستوكو وايبوكسي</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -598,7 +598,7 @@ function hydrateThemeComponents() {
             </div>
             <div class="footer-bottom">
                 <div>© ${new Date().getFullYear()} ${SITE_CONFIG.brandName}. جميع الحقوق محفوظة. | <a href="privacy-policy.html">سياسة الخصوصية</a></div>
-                <div>تطوير وتحسين الأداء بواسطة <a href="https://wa.me/${SITE_CONFIG.devPhone}" target="_blank" rel="nofollow">الرعد التقني</a></div>
+                <div>تطوير مواقع إلكترونية <a href="https://wa.me/${SITE_CONFIG.devPhone}" target="_blank" rel="nofollow">الرعد التقني</a></div>
             </div>
         </footer>
     `;
