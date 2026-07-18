@@ -12,54 +12,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <style>
-        /* الأنماط التصميمية الأصلية لصفحة الهبوط مع الحركات المطلوبة */
-        
-        /* تأثير الحركة والزووم في صورة خلفية البانر */
+        /* أنماط مخصصة لصفحة الهبوط الرئيسية لتجنب تراكم الأكواد غير المستخدمة */
         .hero-section {
-            position: relative;
-            height: auto;
-            min-height: 380px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            color: #ffffff;
             padding: 60px 20px;
             text-align: center;
             border-bottom: 3px solid #c5a059;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-bg-zoom {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('images/interior-paints (13)_result.webp');
-            background-size: cover;
-            background-position: center;
-            animation: kenBurnsAnimation 24s infinite alternate ease-in-out;
-            z-index: 1;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(26, 26, 26, 0.85); /* تظليل داكن فخم لحماية وضوح النص وقراءة جوجل للتحويلات */
-            z-index: 2;
-        }
-
-        /* أنميشن زوم الخلفية الهادئ */
-        @keyframes kenBurnsAnimation {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.12); }
         }
 
         .hero-container {
-            position: relative;
-            z-index: 3;
             max-width: 800px;
             margin: 0 auto;
         }
@@ -79,7 +41,6 @@
             color: #dddddd;
         }
 
-        /* تنسيقات أزرار البانر الأصلية مع أيقونات نبض تفاعلية */
         .cta-buttons {
             display: flex;
             flex-direction: column;
@@ -89,10 +50,7 @@
         }
 
         .btn-main {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+            display: block;
             padding: 15px 25px;
             font-size: 1.1rem;
             font-weight: 700;
@@ -116,19 +74,6 @@
 
         .btn-main:active {
             transform: scale(0.98);
-        }
-
-        /* أيقونة نبض واهتزاز تفاعلية داخل الزر */
-        .btn-main svg {
-            width: 22px;
-            height: 22px;
-            fill: currentColor;
-            animation: pulseIcon 1.5s infinite ease-in-out;
-        }
-
-        @keyframes pulseIcon {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.18); }
         }
 
         /* تنسيق نموذج كسب العملاء (Lead Form Section) */
@@ -401,29 +346,14 @@
     <!-- سيقوم ملف script.js بحقن الهيدر المشترك تلقائياً هنا -->
 
     <main>
-        <!-- قسم الهيرو (Hero Section) للموبايل مع الخلفية المتحركة والأزرار الفعالة -->
+        <!-- قسم الهيرو (Hero Section) للموبايل لضمان أعلى تحويل -->
         <section class="hero-section">
-            <div class="hero-bg-zoom"></div>
-            <div class="hero-overlay"></div>
             <div class="hero-container">
                 <h1>معلم دهانات بالرياض لتنفيذ كافة أعمال الأصباغ والديكورات</h1>
                 <p>متخصصون في تأسيس الدهانات الداخلية ومعالجة الرطوبة والتشققات، تنفيذ أعمال الشامواه والروعة والاستيكو الفاخر، والرشات والبروفايل الخارجي لجميع واجهات المباني السكنية والتجارية بالرياض.</p>
                 <div class="cta-buttons">
-                    <!-- زر الاتصال الهاتفي الأصلي بنص مقتضب وأيقونة متحركة -->
-                    <a href="tel:0530012045" class="btn-main btn-call-hero">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z" />
-                        </svg>
-                        <span>اتصل الآن</span>
-                    </a>
-                    
-                    <!-- زر واتساب الأصلي بنص مقتضب وأيقونة متحركة -->
-                    <a href="https://wa.me/966530012045" class="btn-main btn-whatsapp-hero">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01C17.18 3.03 14.69 2 12.04 2zm0 1.79c2.17 0 4.21.84 5.75 2.38 1.53 1.54 2.38 3.58 2.38 5.75s-.84 4.21-2.38 5.75c-1.54 1.53-3.58 2.38-5.75 2.38-1.42 0-2.81-.37-4.04-1.08l-.29-.17-3 1 .79-2.93-.19-.3c-.76-1.21-1.16-2.61-1.16-4.04 0-4.14 3.36-7.51 7.51-7.51zm-.04 2.72c-.36 0-.74.13-1.01.44-.27.31-.83.81-.83 1.97s.84 2.28.96 2.44c.12.16 1.66 2.53 4.02 3.55.56.24 1 .39 1.34.5.56.18 1.08.15 1.48.09.45-.07 1.39-.57 1.59-1.12.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.47-.28-.25-.13-1.48-.73-1.71-.81-.23-.08-.4-.12-.57.14-.17.26-.66.83-.81.99-.15.17-.31.19-.56.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.57-1.37-.78-1.88-.2-.5-.41-.43-.57-.44l-.49-.01z" />
-                        </svg>
-                        <span>واتساب مباشر</span>
-                    </a>
+                    <a href="tel:0530012045" class="btn-main btn-call-hero">📞 اتصل بنا الآن للحصول على تسعيرة</a>
+                    <a href="https://wa.me/966530012045" class="btn-main btn-whatsapp-hero">💬 تواصل عبر واتساب فوراً</a>
                 </div>
             </div>
         </section>
@@ -473,7 +403,7 @@
                 <!-- الخدمة 1 -->
                 <div class="service-card">
                     <div class="service-img-wrapper">
-                        <img src="images/interior-paints (13)_result.webp" alt="دهانات داخلية معجون وتأسيس بالرياض" loading="lazy">
+                        <img src="./interior-paints.webp" alt="دهانات داخلية معجون وتأسيس بالرياض" loading="lazy">
                     </div>
                     <div class="service-info">
                         <h3>الدهانات الداخلية والمعجون</h3>
@@ -485,7 +415,7 @@
                 <!-- الخدمة 2 -->
                 <div class="service-card">
                     <div class="service-img-wrapper">
-                        <img src="images/suede-finish (1)_result.webp" alt="دهان شامواه ناعم بالرياض" loading="lazy">
+                        <img src="./suede-finish.webp" alt="دهان شامواه ناعم بالرياض" loading="lazy">
                     </div>
                     <div class="service-info">
                         <h3>دهان شامواه الفاخر</h3>
@@ -497,7 +427,7 @@
                 <!-- الخدمة 3 -->
                 <div class="service-card">
                     <div class="service-img-wrapper">
-                        <img src="images/rawah-paint (2)_result_result.webp" alt="دهان روعة ديكوري بالرياض" loading="lazy">
+                        <img src="./rawah-paint.webp" alt="دهان روعة ديكوري بالرياض" loading="lazy">
                     </div>
                     <div class="service-info">
                         <h3>دهان روعة الديكوري</h3>
@@ -509,7 +439,7 @@
                 <!-- الخدمة 4 -->
                 <div class="service-card">
                     <div class="service-img-wrapper">
-                        <img src="images/stucco-paint (1)_result.webp" alt="دهان ستيكو الرخامي بالرياض" loading="lazy">
+                        <img src="./stucco-paint.webp" alt="دهان ستيكو الرخامي بالرياض" loading="lazy">
                     </div>
                     <div class="service-info">
                         <h3>دهان ستيكو الفاخر</h3>
@@ -521,7 +451,7 @@
                 <!-- الخدمة 5 -->
                 <div class="service-card">
                     <div class="service-img-wrapper">
-                        <img src="images/epoxy-flooring (2)_result.webp" alt="طلاء ارضيات ايبوكسي بالرياض" loading="lazy">
+                        <img src="./epoxy-flooring.webp" alt="طلاء ارضيات ايبوكسي بالرياض" loading="lazy">
                     </div>
                     <div class="service-info">
                         <h3>أرضيات الايبوكسي</h3>
@@ -533,7 +463,7 @@
                 <!-- الخدمة 6 -->
                 <div class="service-card">
                     <div class="service-img-wrapper">
-                        <img src="images/exterior-profile (1)_result.webp" alt="دهانات بروفايل خارجي بالرياض" loading="lazy">
+                        <img src="./exterior-profile.webp" alt="دهانات بروفايل خارجي بالرياض" loading="lazy">
                     </div>
                     <div class="service-info">
                         <h3>البروفايل والرشات الخارجية</h3>
@@ -551,22 +481,22 @@
             
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="images/interior-paints (13)_result.webp" alt="أعمال دهان داخلي في الرياض" loading="lazy">
+                    <img src="./interior-paints.webp" alt="أعمال دهان داخلي في الرياض" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/suede-finish (1)_result.webp" alt="تنفيذ دهان شامواه بالرياض" loading="lazy">
+                    <img src="./suede-finish.webp" alt="تنفيذ دهان شامواه بالرياض" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/rawah-paint (2)_result_result.webp" alt="أعمال دهانات روعة ديكورية" loading="lazy">
+                    <img src="./rawah-paint.webp" alt="أعمال دهانات روعة ديكورية" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/stucco-paint (1)_result.webp" alt="تطبيق طلاء ستيكو رخامي بالرياض" loading="lazy">
+                    <img src="./stucco-paint.webp" alt="تطبيق طلاء ستيكو رخامي بالرياض" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/epoxy-flooring (2)_result.webp" alt="تثبيت ايبوكسي ارضيات الرياض" loading="lazy">
+                    <img src="./epoxy-flooring.webp" alt="تثبيت ايبوكسي ارضيات الرياض" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/exterior-profile (1)_result.webp" alt="واجهة بروفايل في شمال الرياض" loading="lazy">
+                    <img src="./exterior-profile.webp" alt="واجهة بروفايل في شمال الرياض" loading="lazy">
                 </div>
             </div>
         </section>
