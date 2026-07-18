@@ -4,17 +4,17 @@
 
 /* 1. إعداد المتغيرات اللونية والتصميمية المشتركة */
 :root {
-    --primary-color: #1a1a1a;    /* أسود فخم لخلفية الهيدر والفوتر والعناصر الرئيسية */
-    --accent-color: #c5a059;     /* ذهبي دافئ للمقاولات والديكورات الراقية */
-    --accent-hover: #b38f4b;     /* درجة أغمق للذهبي عند التفاعل */
-    --bg-light: #fcfcfc;         /* خلفية الصفحات الأساسية */
-    --bg-card: #ffffff;          /* خلفية بطاقات الخدمات والشهادات */
-    --text-dark: #2c2c2c;        /* لون النصوص الرئيسية */
-    --text-muted: #666666;       /* لون النصوص الفرعية والتوضيحية */
+    --primary-color: #1a1a1a;    /* أسود فاخر ملوكي */
+    --accent-color: #c5a059;     /* ذهبي ملكي دافئ للأصباغ */
+    --accent-hover: #b38f4b;     /* درجة أغمق للذهبي */
+    --bg-light: #fcfcfc;         
+    --bg-card: #ffffff;          
+    --text-dark: #2c2c2c;        
+    --text-muted: #666666;       
     --white: #ffffff;
-    --border-color: #eaeaea;     /* لون الحدود الخفيفة */
-    --whatsapp-color: #25d366;   /* اللون الرسمي المعتمد للواتساب */
-    --phone-color: #007aff;      /* اللون الرسمي المعتمد للاتصال */
+    --border-color: #eaeaea;     
+    --whatsapp-color: #25d366;   /* لون الواتساب الغني الصافي */
+    --phone-color: #007aff;      
     --transition-speed: 0.3s;
 }
 
@@ -193,7 +193,7 @@ body {
     font-weight: bold;
 }
 
-/* 6. شبكة الصور الثنائية المقاومة للاهتزاز (Two-Column Responsive Gallery) */
+/* 6. شبكة الصور الثنائية المقاومة للاهتزاز (Two-Column Responsive Grid) */
 .gallery-grid-two {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* تظهر دائماً على شكل صورتين متجاورتين */
@@ -224,115 +224,147 @@ body {
     transform: scale(1.04);
 }
 
-/* 7. تصميم النماذج المدمجة لصفحات الخدمات */
-.form-card {
+/* ==========================================================================
+   تنسيقات النماذج الفاخرة والموحدة (حقول إدخال كبيرة، واحترافية للهواتف)
+   ========================================================================== */
+.form-card, .form-container {
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-    position: sticky;
-    top: 100px;
+    padding: 30px 25px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+    box-sizing: border-box;
 }
 
-.form-card h3 {
-    font-size: 1.3rem;
+.form-group {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
     font-weight: 700;
-    margin-bottom: 10px;
-    color: var(--primary-color);
-    text-align: center;
+    color: var(--text-dark);
+    margin-bottom: 8px;
 }
 
-.form-card p {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-/* 8. أنماط صفحة الأسئلة الشائعة (FAQ) */
-.faq-list {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.faq-item {
-    background-color: var(--white);
-    border: 1px solid var(--border-color);
+/* حقول مريحة وتفاعلية تماماً للكتابة واللمس على الموبايل */
+.form-control {
+    width: 100%;
+    padding: 14px 16px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    background-color: #fafafa;
+    border: 1px solid #dddddd;
     border-radius: 8px;
-    margin-bottom: 15px;
-    padding: 20px;
+    box-sizing: border-box;
+    transition: all 0.25s ease;
+    -webkit-appearance: none; /* حماية مظهر سفاري للآيفون */
 }
 
-.faq-question {
+.form-control:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    background-color: var(--white);
+    box-shadow: 0 0 0 4px rgba(197, 160, 89, 0.15);
+}
+
+/* زر إرسال النموذج الفاخر */
+.btn-submit {
+    width: 100%;
+    background: linear-gradient(135deg, #c5a059 0%, #b38f4b 100%);
+    color: var(--primary-color) !important;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 800;
     font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 10px;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
 }
 
-.faq-answer {
-    font-size: 0.95rem;
-    color: #555555;
-    line-height: 1.7;
+.btn-submit:hover {
+    background: linear-gradient(135deg, #b38f4b 0%, #c5a059 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(197, 160, 89, 0.45);
+}
+
+.btn-submit:active {
+    transform: scale(0.98);
 }
 
 /* ==========================================================================
-   إضافات الفخامة والحركة الحرة والتفاعلية لأزرار الاتصال والواتساب (Aura Glow)
+   تنسيقات الفخامة المطلقة (أزرار صلبة بالكامل ومضيئة ذاتياً بأمواج النبض)
    ========================================================================== */
 
-/* فئة الزر الفاخر المخصص للواتساب مع نبض هالة خضراء حوله */
+/* زر الواتساب الفاخر - صلب بالكامل وغير شفاف */
 .btn-lux-whatsapp {
-    background: linear-gradient(135deg, var(--whatsapp-color) 0%, #1ebe5d 100%) !important;
+    background-color: var(--whatsapp-color) !important;
+    background: linear-gradient(135deg, #25d366 0%, #1eaf52 100%) !important;
     color: #ffffff !important;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45) !important;
+    font-weight: 700 !important;
+    border: none !important;
+    opacity: 1 !important;
     position: relative;
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-    animation: pulseAuraGreen 2s infinite ease-in-out;
+    z-index: 10;
+    animation: pulseAuraGreen 2.5s infinite ease-in-out;
 }
 
-/* فئة الزر الفاخر المخصص للاتصال الهاتفي مع نبض هالة ذهبية/زرقاء فخمة */
+/* زر الاتصال الهاتفي الفاخر - صلب بالكامل ذهبي ملوكي غير شفاف */
 .btn-lux-phone {
-    background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-hover) 100%) !important;
+    background-color: var(--accent-color) !important;
+    background: linear-gradient(135deg, #c5a059 0%, #b38f4b 100%) !important;
     color: var(--primary-color) !important;
+    box-shadow: 0 4px 20px rgba(197, 160, 89, 0.45) !important;
+    font-weight: 700 !important;
+    border: none !important;
+    opacity: 1 !important;
     position: relative;
-    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4);
-    animation: pulseAuraGold 2s infinite ease-in-out;
+    z-index: 10;
+    animation: pulseAuraGold 2.5s infinite ease-in-out;
 }
 
-/* تأثيرات النبض والوهج (Aura Glow Keyframes) */
+/* هالات النبض الضوئية الفاخرة للأزرار المصمتة */
 @keyframes pulseAuraGreen {
-    0% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6), 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-    70% {
-        box-shadow: 0 0 0 12px rgba(37, 211, 102, 0), 0 6px 20px rgba(0, 0, 0, 0.15);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.65), 0 4px 12px rgba(0,0,0,0.2); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0), 0 6px 18px rgba(0,0,0,0.15); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 4px 12px rgba(0,0,0,0.2); }
 }
 
 @keyframes pulseAuraGold {
-    0% {
-        box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.6), 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-    70% {
-        box-shadow: 0 0 0 12px rgba(197, 160, 89, 0), 0 6px 20px rgba(0, 0, 0, 0.15);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(197, 160, 89, 0), 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
+    0% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.65), 0 4px 12px rgba(0,0,0,0.2); }
+    70% { box-shadow: 0 0 0 15px rgba(197, 160, 89, 0), 0 6px 18px rgba(0,0,0,0.15); }
+    100% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0), 0 4px 12px rgba(0,0,0,0.2); }
 }
 
-/* حركة التذبذب اللطيفة الدورية للأيقونة داخل الأزرار التفاعلية */
-.btn-lux-whatsapp svg, .btn-lux-phone svg,
-.btn-lux-whatsapp span::before, .btn-lux-phone span::before {
-    animation: wobbleIcon 1.5s infinite alternate ease-in-out;
+/* تلوين وضبط أيقونات الأزرار العائمة لمنع أي تداخل أو شفافية */
+.floating-btn svg {
+    width: 28px !important;
+    height: 28px !important;
+    fill: #ffffff !important;
+    display: block;
 }
 
-@keyframes wobbleIcon {
-    0% { transform: scale(1) rotate(-3deg); }
-    100% { transform: scale(1.1) rotate(3deg); }
+.floating-btn.btn-lux-phone svg {
+    fill: var(--primary-color) !important; /* أيقونة الاتصال داكنة فوق الزر الذهبي لمظهر كلاسيكي */
+}
+
+/* زر الصعود للأعلى ملوكي صلب */
+.btn-back-to-top {
+    background-color: var(--primary-color) !important;
+    border: 2px solid var(--accent-color) !important;
+    color: var(--accent-color) !important;
+    opacity: 1 !important;
+}
+
+.btn-back-to-top svg {
+    fill: var(--accent-color) !important;
 }
 
 /* 9. توافق كامل مع الهواتف الذكية الصغيرة جداً */
