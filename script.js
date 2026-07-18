@@ -575,7 +575,7 @@ function hydrateThemeComponents() {
                     </div>
                 </div>
                 <div class="footer-col">
-                    <h3>تواصل معنا فوراً</h3>
+                    <h3>0530012045تواصل معنا فوراً</h3>
                     <p style="margin-bottom: 12px;">📍 الرياض، المملكة العربية السعودية</p>
                     <div style="display: flex; flex-direction: column; gap: 12px;">
                         <!-- زر اتصال الفوتر بأيقونة SVG متحركة -->
