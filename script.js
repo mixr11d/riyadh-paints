@@ -475,7 +475,7 @@ function hydrateThemeComponents() {
         </header>
     `;
 
-    // ج- بناء كود الفوتر (Footer)
+    // ج- بناء كود الفوتر (Footer) مدمجاً بأزرار الاتصال التفاعلية الفخمة والمتحركة تلقائياً
     const footerHTML = `
         <footer>
             <div class="footer-grid">
@@ -509,9 +509,11 @@ function hydrateThemeComponents() {
                 </div>
                 <div class="footer-col">
                     <h3>تواصل معنا فوراً</h3>
-                    <p style="margin-bottom: 5px;">📍 الرياض، المملكة العربية السعودية</p>
-                    <p style="margin-bottom: 5px;">📞 <a href="tel:${SITE_CONFIG.phone}" style="color: var(--accent-color); text-decoration: none; font-weight: bold;">${SITE_CONFIG.phone}</a></p>
-                    <p>💬 <a href="https://wa.me/${SITE_CONFIG.whatsapp}" style="color: #25d366; text-decoration: none; font-weight: bold;">راسلنا واتساب مباشرة</a></p>
+                    <p style="margin-bottom: 12px;">📍 الرياض، المملكة العربية السعودية</p>
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <a href="tel:${SITE_CONFIG.phone}" class="btn btn-lux-phone" style="padding: 10px 15px; font-size: 0.9rem; border-radius: 6px;">📞 اتصل بنا الآن</a>
+                        <a href="https://wa.me/${SITE_CONFIG.whatsapp}" class="btn btn-lux-whatsapp" style="padding: 10px 15px; font-size: 0.9rem; border-radius: 6px;">💬 اسألنا مباشرة عبر واتساب فوراً</a>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -521,17 +523,17 @@ function hydrateThemeComponents() {
         </footer>
     `;
 
-    // د- بناء كود أزرار الاتصال العائمة وزر الصعود للأعلى
+    // د- بناء كود أزرار الاتصال العائمة وزر الصعود للأعلى (Aura Glowing)
     const floatingActionsHTML = `
         <div class="floating-actions">
             <!-- زر الاتصال العائد للعميل -->
-            <a href="tel:${SITE_CONFIG.phone}" class="floating-btn btn-phone pulse-effect" id="floatPhoneBtn" title="اتصل الآن برقم جوالنا">
+            <a href="tel:${SITE_CONFIG.phone}" class="floating-btn btn-lux-phone pulse-effect" id="floatPhoneBtn" title="اتصل الآن برقم جوالنا">
                 <svg viewBox="0 0 24 24">
                     <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z" />
                 </svg>
             </a>
             <!-- زر واتساب العائد للعميل -->
-            <a href="https://wa.me/${SITE_CONFIG.whatsapp}" class="floating-btn btn-whatsapp pulse-effect" id="floatWhatsappBtn" title="تواصل معنا عبر واتساب">
+            <a href="https://wa.me/${SITE_CONFIG.whatsapp}" class="floating-btn btn-lux-whatsapp pulse-effect" id="floatWhatsappBtn" title="تواصل معنا عبر واتساب">
                 <svg viewBox="0 0 24 24">
                     <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01C17.18 3.03 14.69 2 12.04 2zm0 1.79c2.17 0 4.21.84 5.75 2.38 1.53 1.54 2.38 3.58 2.38 5.75s-.84 4.21-2.38 5.75c-1.54 1.53-3.58 2.38-5.75 2.38-1.42 0-2.81-.37-4.04-1.08l-.29-.17-3 1 .79-2.93-.19-.3c-.76-1.21-1.16-2.61-1.16-4.04 0-4.14 3.36-7.51 7.51-7.51zm-.04 2.72c-.36 0-.74.13-1.01.44-.27.31-.83.81-.83 1.97s.84 2.28.96 2.44c.12.16 1.66 2.53 4.02 3.55.56.24 1 .39 1.34.5.56.18 1.08.15 1.48.09.45-.07 1.39-.57 1.59-1.12.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.47-.28-.25-.13-1.48-.73-1.71-.81-.23-.08-.4-.12-.57.14-.17.26-.66.83-.81.99-.15.17-.31.19-.56.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.57-1.37-.78-1.88-.2-.5-.41-.43-.57-.44l-.49-.01z" />
                 </svg>
@@ -686,6 +688,24 @@ function setupInteractionsAndTracking() {
             }, 150); 
         });
     }
+
+    // و- العثور التلقائي على أي روابط أو دعوات نصية مخصصة للاتصال والواتساب بالصفحات وتحويلها لنمط فخم متحرك
+    const allLinks = document.querySelectorAll("a");
+    allLinks.forEach(link => {
+        const href = link.getAttribute("href") || "";
+        const text = link.textContent.trim();
+        
+        // إذا كان رابط واتساب تفاعلي
+        if (href.includes("wa.me") && href.includes(SITE_CONFIG.whatsapp)) {
+            // إضافة التنسيق الفخم المتحرك فوراً
+            link.classList.add("btn", "btn-lux-whatsapp");
+        }
+        
+        // إذا كان رابط اتصال هاتفي تفاعلي
+        if (href.startsWith("tel:") && href.includes(SITE_CONFIG.phone)) {
+            link.classList.add("btn", "btn-lux-phone");
+        }
+    });
 }
 
 // 6. تشغيل التهيئة بمجرد تحميل هيكل المستند (DOM) لضمان السرعة والأداء الفائق
