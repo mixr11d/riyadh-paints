@@ -1,5 +1,5 @@
 /**
- * script.js - المحرك المركزي لإعدادات التتبع والتهيئة والتفاعل الديناميكي
+ * script.js - المحرك المركزي لإعدادات التتبع والتهيئة والتفاعل الديناميكي المطور
  * نشاط: مؤسسة تنفيذ دهانات الرياض
  */
 
@@ -53,7 +53,7 @@ function trackGoogleConversion(label, value) {
     }
 }
 
-// 3. حقن الأنماط التصميمية (CSS) المشتركة للهيدر والفوتر والعناصر العائمة ديناميكياً لضمان سرعة التحميل ومظهر فخم
+// 3. حقن الأنماط التصميمية (CSS) الفخمة والمصمتة بالكامل للأزرار العائمة ودعوات الفوتر لمنع أي شفافية
 (function injectGlobalStyles() {
     const style = document.createElement('style');
     style.textContent = `
@@ -61,7 +61,7 @@ function trackGoogleConversion(label, value) {
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap');
         
         :root {
-            --primary-color: #1a1a1a; /* أسود فاخر */
+            --primary-color: #1a1a1a; /* أسود فاخر ملوكي */
             --accent-color: #c5a059;  /* ذهبي دافئ للمقاولات الراقية */
             --bg-light: #fcfcfc;
             --text-dark: #2c2c2c;
@@ -284,7 +284,9 @@ function trackGoogleConversion(label, value) {
             font-weight: 600;
         }
 
-        /* الأزرار العائمة التفاعلية للموبايل */
+        /* ==========================================================================
+           تنسيقات الأزرار العائمة الثابتة (صلبة بالكامل 100% وغير شفافة نهائياً)
+           ========================================================================== */
         .floating-actions {
             position: fixed;
             bottom: 20px;
@@ -292,35 +294,61 @@ function trackGoogleConversion(label, value) {
             display: flex;
             flex-direction: column;
             gap: 12px;
-            z-index: 999;
+            z-index: 9999 !important; /* رفع الأولوية للطبقة علوياً */
         }
 
         .floating-btn {
-            width: 54px;
-            height: 54px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
-            text-decoration: none;
-            transition: transform 0.3s ease;
-            position: relative;
+            width: 56px !important;
+            height: 56px !important;
+            border-radius: 50% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            color: var(--white) !important;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4) !important;
+            text-decoration: none !important;
+            transition: transform 0.3s ease !important;
+            position: relative !important;
+            opacity: 1 !important; /* ضمان عدم الشفافية */
+            border: none !important;
         }
 
-        .floating-btn svg {
-            width: 26px;
-            height: 26px;
-            fill: currentColor;
+        /* تلوين الخلفية المصمتة والنبض للأزرار العائمة */
+        .btn-float-wa {
+            background-color: var(--whatsapp-color) !important;
+            background: linear-gradient(135deg, #25d366 0%, #1eaf52 100%) !important;
+            animation: pulseAuraGreen 2.5s infinite ease-in-out !important;
         }
 
-        .btn-whatsapp {
-            background-color: var(--whatsapp-color);
+        .btn-float-phone {
+            background-color: var(--accent-color) !important;
+            background: linear-gradient(135deg, #c5a059 0%, #b38f4b 100%) !important;
+            animation: pulseAuraGold 2.5s infinite ease-in-out !important;
         }
 
-        .btn-phone {
-            background-color: var(--phone-color);
+        /* هالات النبض الضوئية الفاخرة للأزرار الثابتة */
+        @keyframes pulseAuraGreen {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7), 0 4px 12px rgba(0,0,0,0.2); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0), 0 6px 18px rgba(0,0,0,0.15); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 4px 12px rgba(0,0,0,0.2); }
+        }
+
+        @keyframes pulseAuraGold {
+            0% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.7), 0 4px 12px rgba(0,0,0,0.2); }
+            70% { box-shadow: 0 0 0 15px rgba(197, 160, 89, 0), 0 6px 18px rgba(0,0,0,0.15); }
+            100% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0), 0 4px 12px rgba(0,0,0,0.2); }
+        }
+
+        /* تأكيد تلوين وثبات أيقونات الـ SVG */
+        .floating-actions svg {
+            width: 28px !important;
+            height: 28px !important;
+            fill: #ffffff !important;
+            display: block !important;
+        }
+
+        .btn-float-phone svg {
+            fill: var(--primary-color) !important; /* جعل أيقونة الهاتف داكنة فوق الزر الذهبي لمظهر ملوكي كلاسيكي */
         }
 
         /* زر الصعود للأعلى يساراً */
@@ -332,7 +360,7 @@ function trackGoogleConversion(label, value) {
             height: 44px;
             border-radius: 50%;
             background-color: var(--primary-color);
-            border: 1px solid var(--accent-color);
+            border: 2px solid var(--accent-color);
             color: var(--accent-color);
             display: flex;
             align-items: center;
@@ -353,20 +381,58 @@ function trackGoogleConversion(label, value) {
         .btn-back-to-top svg {
             width: 20px;
             height: 20px;
+            fill: var(--accent-color) !important;
+        }
+
+        /* ==========================================================================
+           أنماط أزرار الفوتر المتحركة الفخمة المدعومة بهالات النبض الضوئية
+           ========================================================================== */
+        .footer-lux-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 20px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 6px;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            box-sizing: border-box;
+        }
+
+        .footer-lux-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* زر الاتصال الذهبي الفخم في الفوتر */
+        .footer-btn-phone {
+            background: linear-gradient(135deg, #c5a059 0%, #b38f4b 100%) !important;
+            color: #1a1a1a !important;
+            animation: pulseAuraGold 2.5s infinite ease-in-out;
+        }
+
+        /* زر الواتساب الأخضر الفخم في الفوتر */
+        .footer-btn-wa {
+            background: linear-gradient(135deg, #25d366 0%, #1eaf52 100%) !important;
+            color: #ffffff !important;
+            animation: pulseAuraGreen 2.5s infinite ease-in-out;
+        }
+
+        /* حركة التذبذب والانعكاس اللطيفة للأيقونات */
+        .footer-lux-btn svg {
+            width: 20px;
+            height: 20px;
             fill: currentColor;
+            animation: wobbleIcon 1.5s infinite alternate ease-in-out;
         }
 
-        /* حركة الاهتزاز المتقطعة لزيادة النقرات (Intermittent Shake Animation) */
-        @keyframes intermittentPulse {
-            0%, 90%, 100% { transform: scale(1); }
-            92% { transform: scale(1.1) rotate(5deg); }
-            94% { transform: scale(1.1) rotate(-5deg); }
-            96% { transform: scale(1.1) rotate(5deg); }
-            98% { transform: scale(1.1) rotate(-5deg); }
-        }
-
-        .pulse-effect {
-            animation: intermittentPulse 4s infinite ease-in-out;
+        @keyframes wobbleIcon {
+            0% { transform: scale(1) rotate(-4deg); }
+            100% { transform: scale(1.1) rotate(4deg); }
         }
 
         /* متجاوب مع الهواتف الذكية */
@@ -475,7 +541,7 @@ function hydrateThemeComponents() {
         </header>
     `;
 
-    // ج- بناء كود الفوتر (Footer) مدمجاً بأزرار الاتصال التفاعلية الفخمة والمتحركة تلقائياً وبأحياء الخدمة الشاملة بالرياض
+    // ج- بناء كود الفوتر (Footer) مدمجاً بأزرار الاتصال التفاعلية الفخمة والمتحركة بالأيقونات SVG صلبة تماماً
     const footerHTML = `
         <footer>
             <div class="footer-grid">
@@ -486,7 +552,7 @@ function hydrateThemeComponents() {
                 <div class="footer-col">
                     <h3>روابط الخدمات السريعة</h3>
                     <ul>
-                        <li><a href="interior-paints.html">دهانات داخلية ومعجون</a></li>
+                        <li><a href="interior-paints.html">دهانات داخلية معجون</a></li>
                         <li><a href="exterior-paints.html">دهانات خارجية وبروفايل</a></li>
                         <li><a href="suede-finish.html">دهان شامواه وروعة وخيال</a></li>
                         <li><a href="stucco-paint.html">دهان ستيكو وايبوكسي</a></li>
@@ -511,9 +577,22 @@ function hydrateThemeComponents() {
                 <div class="footer-col">
                     <h3>تواصل معنا فوراً</h3>
                     <p style="margin-bottom: 12px;">📍 الرياض، المملكة العربية السعودية</p>
-                    <div style="display: flex; flex-direction: column; gap: 10px;">
-                        <a href="tel:${SITE_CONFIG.phone}" class="btn btn-lux-phone" style="padding: 12px 15px; font-size: 0.95rem; border-radius: 6px;">📞 اتصل بنا الآن</a>
-                        <a href="https://wa.me/${SITE_CONFIG.whatsapp}" class="btn btn-lux-whatsapp" style="padding: 12px 15px; font-size: 0.95rem; border-radius: 6px;">💬 اسألنا مباشرة عبر واتساب فوراً</a>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <!-- زر اتصال الفوتر بأيقونة SVG متحركة -->
+                        <a href="tel:${SITE_CONFIG.phone}" class="footer-lux-btn footer-btn-phone">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z" />
+                            </svg>
+                            <span>اتصل بنا الآن</span>
+                        </a>
+                        
+                        <!-- زر واتساب الفوتر بأيقونة SVG متحركة -->
+                        <a href="https://wa.me/${SITE_CONFIG.whatsapp}" class="footer-lux-btn footer-btn-wa">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01C17.18 3.03 14.69 2 12.04 2zm0 1.79c2.17 0 4.21.84 5.75 2.38 1.53 1.54 2.38 3.58 2.38 5.75s-.84 4.21-2.38 5.75c-1.54 1.53-3.58 2.38-5.75 2.38-1.42 0-2.81-.37-4.04-1.08l-.29-.17-3 1 .79-2.93-.19-.3c-.76-1.21-1.16-2.61-1.16-4.04 0-4.14 3.36-7.51 7.51-7.51zm-.04 2.72c-.36 0-.74.13-1.01.44-.27.31-.83.81-.83 1.97s.84 2.28.96 2.44c.12.16 1.66 2.53 4.02 3.55.56.24 1 .39 1.34.5.56.18 1.08.15 1.48.09.45-.07 1.39-.57 1.59-1.12.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.47-.28-.25-.13-1.48-.73-1.71-.81-.23-.08-.4-.12-.57.14-.17.26-.66.83-.81.99-.15.17-.31.19-.56.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.57-1.37-.78-1.88-.2-.5-.41-.43-.57-.44l-.49-.01z" />
+                            </svg>
+                            <span>اسألنا مباشرة عبر واتساب فوراً</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -524,17 +603,17 @@ function hydrateThemeComponents() {
         </footer>
     `;
 
-    // د- بناء كود أزرار الاتصال العائمة وزر الصعود للأعلى (Aura Glowing) بالخلفيات المصمتة
+    // د- بناء كود أزرار الاتصال العائمة وزر الصعود للأعلى (خلفيات مصمتة 100% بدون أي شفافية)
     const floatingActionsHTML = `
         <div class="floating-actions">
             <!-- زر الاتصال العائد للعميل -->
-            <a href="tel:${SITE_CONFIG.phone}" class="floating-btn btn-lux-phone pulse-effect" id="floatPhoneBtn" title="اتصل الآن برقم جوالنا">
+            <a href="tel:${SITE_CONFIG.phone}" class="floating-btn btn-float-phone pulse-effect" id="floatPhoneBtn" title="اتصل الآن برقم جوالنا">
                 <svg viewBox="0 0 24 24">
                     <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z" />
                 </svg>
             </a>
             <!-- زر واتساب العائد للعميل -->
-            <a href="https://wa.me/${SITE_CONFIG.whatsapp}" class="floating-btn btn-lux-whatsapp pulse-effect" id="floatWhatsappBtn" title="تواصل معنا عبر واتساب">
+            <a href="https://wa.me/${SITE_CONFIG.whatsapp}" class="floating-btn btn-float-wa pulse-effect" id="floatWhatsappBtn" title="تواصل معنا عبر واتساب">
                 <svg viewBox="0 0 24 24">
                     <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01C17.18 3.03 14.69 2 12.04 2zm0 1.79c2.17 0 4.21.84 5.75 2.38 1.53 1.54 2.38 3.58 2.38 5.75s-.84 4.21-2.38 5.75c-1.54 1.53-3.58 2.38-5.75 2.38-1.42 0-2.81-.37-4.04-1.08l-.29-.17-3 1 .79-2.93-.19-.3c-.76-1.21-1.16-2.61-1.16-4.04 0-4.14 3.36-7.51 7.51-7.51zm-.04 2.72c-.36 0-.74.13-1.01.44-.27.31-.83.81-.83 1.97s.84 2.28.96 2.44c.12.16 1.66 2.53 4.02 3.55.56.24 1 .39 1.34.5.56.18 1.08.15 1.48.09.45-.07 1.39-.57 1.59-1.12.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.47-.28-.25-.13-1.48-.73-1.71-.81-.23-.08-.4-.12-.57.14-.17.26-.66.83-.81.99-.15.17-.31.19-.56.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.57-1.37-.78-1.88-.2-.5-.41-.43-.57-.44l-.49-.01z" />
                 </svg>
