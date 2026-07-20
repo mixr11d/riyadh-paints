@@ -8,10 +8,10 @@ const SITE_CONFIG = {
     brandName: "مؤسسة تنفيذ دهانات الرياض",
     phone: "0530012045",
     whatsapp: "966530012045",
-    googleAdsId: "AW-18128423919",
+    googleAdsId: "AW-18331827743",
     conversionLabels: {
-        phone: "I6DECKKErc8cEO-Xp8RD",     // قيمة التحويل: 70 ريال
-        whatsapp: "fAtpCMjkr88cEO-Xp8RD",  // قيمة التحويل: 50 ريال
+        phone: "4LvNCOrc3NMcEJ_8paVE",     // قيمة التحويل: 70 ريال
+        whatsapp: "YgGaCO3c3NMcEJ_8paVE",  // قيمة التحويل: 50 ريال
         form: "zzIbCOX-hs8cEO-Xp8RD"       // قيمة التحويل: 100 ريال
     },
     conversionValues: {
