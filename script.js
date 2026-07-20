@@ -12,7 +12,7 @@ const SITE_CONFIG = {
     conversionLabels: {
         phone: "4LvNCOrc3NMcEJ_8paVE",     // قيمة التحويل: 70 ريال
         whatsapp: "YgGaCO3c3NMcEJ_8paVE",  // قيمة التحويل: 50 ريال
-        form: "zzIbCOX-hs8cEO-Xp8RD"       // قيمة التحويل: 100 ريال
+        form: "wIlOCIe14NMcEJ_8paVE"       // قيمة التحويل: 100 ريال
     },
     conversionValues: {
         phone: 70,
